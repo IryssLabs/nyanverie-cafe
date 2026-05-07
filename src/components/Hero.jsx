@@ -32,13 +32,12 @@ export default function Hero() {
             backfaceVisibility: "hidden",
           }}
         >
-          {/* Menggunakan file lokal dari folder public */}
           <source src="/video-bg.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      {/* Clickable overlay */}
+      {/* Clickable overlay untuk mute/unmute */}
       <button
         onClick={handleToggleMute}
         aria-label={isMuted ? "Unmute audio" : "Mute audio"}
@@ -48,7 +47,7 @@ export default function Hero() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none" />
 
-      {/* Sound indicator — kanan bawah */}
+      {/* Sound indicator */}
       <div className="absolute bottom-6 right-6 z-30 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-2.5 rounded-full pointer-events-none">
         <div className="flex items-center gap-[2px] h-4">
           {[6, 10, 14, 10, 6].map((h, i) => (
@@ -67,8 +66,7 @@ export default function Hero() {
         <span
           className="text-[11px] font-semibold tracking-[0.1em] uppercase"
           style={{
-            background:
-              "linear-gradient(135deg, #b6c8f2 0%, #c9b8f0 40%, #f9c6d1 100%)",
+            background: "linear-gradient(135deg, #b6c8f2 0%, #c9b8f0 40%, #f9c6d1 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -101,24 +99,24 @@ export default function Hero() {
         </div>
 
         <div className="flex gap-4 pointer-events-auto">
-          {/* Primary button — gradient fill, teks putih */}
-          <button
-            className="px-8 py-4 rounded-sm font-bold text-white shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl active:scale-[0.98]"
+          {/* Link ke Pricing */}
+          <a
+            href="#pricing"
+            className="px-8 py-4 rounded-sm font-bold text-white shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl active:scale-[0.98] text-center"
             style={{
-              background:
-                "linear-gradient(135deg, #b6c8f2 0%, #c9b8f0 40%, #f9c6d1 100%)",
+              background: "linear-gradient(135deg, #b6c8f2 0%, #c9b8f0 40%, #f9c6d1 100%)",
             }}
           >
             RESERVE NOW
-          </button>
+          </a>
 
-          {/* Secondary button — outline dengan teks putih, hover jadi gradient fill */}
-          <button
-            className="px-8 py-4 rounded-sm font-bold text-white border-2 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group"
+          {/* Link ke Maids */}
+          <a
+            href="#maids"
+            className="px-8 py-4 rounded-sm font-bold text-white border-2 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group text-center"
             style={{ borderColor: "rgba(201,184,240,0.7)" }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background =
-                "linear-gradient(135deg, #b6c8f2 0%, #c9b8f0 40%, #f9c6d1 100%)";
+              e.currentTarget.style.background = "linear-gradient(135deg, #b6c8f2 0%, #c9b8f0 40%, #f9c6d1 100%)";
               e.currentTarget.style.borderColor = "transparent";
             }}
             onMouseLeave={(e) => {
@@ -127,7 +125,7 @@ export default function Hero() {
             }}
           >
             OUR MAIDS
-          </button>
+          </a>
         </div>
       </div>
     </section>
